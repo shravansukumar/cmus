@@ -637,24 +637,24 @@ int u_strcase_equal(const char *a, const char *b)
 
 static uchar get_base_from_composed(uchar ch)
 {
-	int begin = 0;
-	int end = N_ELEMENTS(unidecomp_map);
-
-	if (ch < unidecomp_map[begin].composed || ch > unidecomp_map[end - 1].composed)
-		return ch;
-
-	/* binary search */
-	while (1) {
-		int half = (begin + end) / 2;
-		if (ch == unidecomp_map[half].composed)
-			return unidecomp_map[half].base;
-		else if (half == begin)
-			break;
-		else if (ch > unidecomp_map[half].composed)
-			begin = half;
-		else
-			end = half;
-	}
+//	int begin = 0;
+//	int end = N_ELEMENTS(unidecomp_map);
+//
+//	if (ch < unidecomp_map[begin].composed || ch > unidecomp_map[end - 1].composed)
+//		return ch;
+//
+//	/* binary search */
+//	while (1) {
+//		int half = (begin + end) / 2;
+//		if (ch == unidecomp_map[half].composed)
+//			return unidecomp_map[half].base;
+//		else if (half == begin)
+//			break;
+//		else if (ch > unidecomp_map[half].composed)
+//			begin = half;
+//		else
+//			end = half;
+//	}
 	return ch;
 }
 
